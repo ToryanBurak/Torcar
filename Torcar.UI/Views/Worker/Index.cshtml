@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Worker Panel";
+
+}
+<link href="~/css/AdminPanel.css" rel="stylesheet" media="all" />
+<div class="row text-center">
+    <a asp-action="Cars" asp-controller="Worker" class="btn btn-outline-danger text-dark col-6  text-light px-1 my-1">
+        <div id="Cars" class="" style="height:30vh">
+            <h1>
+                <div class="btn btn-success">Arabalar</div>
+            </h1>
+        </div>
+    </a>
+    <a asp-action="Adverts" asp-controller="Worker" class="btn btn-outline-success text-dark col-6  text-light px-1 my-1">
+        <div id="Adverts" class="" style="height:30vh">
+            <h1>
+                <div class="btn btn-primary">İlanlar</div>
+            </h1>
+        </div>
+    </a>
+    <a asp-action="Requests" asp-controller="Worker" class="btn btn-outline-warning text-dark col-12  text-light px-1 my-1">
+        <div id="Requests" class="" style="height:30vh">
+            <h1>
+                <div class="btn btn-danger">İstekler</div>
+            </h1>
+        </div>
+    </a>
+</div>

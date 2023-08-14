@@ -1,0 +1,57 @@
+﻿body {
+}
+
+#workers {
+    background:url('../Images/AdminPanel/Workers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+#Cars {
+    background:url('../Images/AdminPanel/Cars.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+#Adverts {
+    background: url('../Images/AdminPanel/Adverts (2).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+#Requests {
+    background: url('../Images/AdminPanel/Requests.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+#Members {
+    background: url('../Images/AdminPanel/Members.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+#Rents {
+    background: url('../Images/AdminPanel/Rent.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}

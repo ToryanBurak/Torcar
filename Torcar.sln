@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torcar.UI", "Torcar.UI\Torcar.UI.csproj", "{2883171D-438A-4044-91FA-95EC8EE89FAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torcar.CORE", "Torcar.Core\Torcar.CORE.csproj", "{B5B35F04-1820-402D-A64C-4851BDC3EE46}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torcar.REPOSITORY", "Torcar.REPOSİTORY\Torcar.REPOSITORY.csproj", "{8C4AF48D-487B-40EE-8E30-DE7016968663}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torcar.SERVICE", "Torcar.SERVICE\Torcar.SERVICE.csproj", "{73AB1679-5793-4065-AF03-22F4E254EDE8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torcar.CACHE", "Torcar.CACHE\Torcar.CACHE.csproj", "{5E803508-C3AA-4816-83C8-D4431454511F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorCar.Test", "TorCar.Test\TorCar.Test.csproj", "{DE644946-8807-4FDF-A17C-1BABE2755584}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4718F26-F548-44F6-9A53-46D0D5D7C0BF}"
+	ProjectSection(SolutionItems) = preProject
+		Note.txt = Note.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2883171D-438A-4044-91FA-95EC8EE89FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2883171D-438A-4044-91FA-95EC8EE89FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2883171D-438A-4044-91FA-95EC8EE89FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2883171D-438A-4044-91FA-95EC8EE89FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B35F04-1820-402D-A64C-4851BDC3EE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B35F04-1820-402D-A64C-4851BDC3EE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B35F04-1820-402D-A64C-4851BDC3EE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B35F04-1820-402D-A64C-4851BDC3EE46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C4AF48D-487B-40EE-8E30-DE7016968663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4AF48D-487B-40EE-8E30-DE7016968663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4AF48D-487B-40EE-8E30-DE7016968663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4AF48D-487B-40EE-8E30-DE7016968663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73AB1679-5793-4065-AF03-22F4E254EDE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AB1679-5793-4065-AF03-22F4E254EDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AB1679-5793-4065-AF03-22F4E254EDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AB1679-5793-4065-AF03-22F4E254EDE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E803508-C3AA-4816-83C8-D4431454511F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E803508-C3AA-4816-83C8-D4431454511F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E803508-C3AA-4816-83C8-D4431454511F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E803508-C3AA-4816-83C8-D4431454511F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE644946-8807-4FDF-A17C-1BABE2755584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE644946-8807-4FDF-A17C-1BABE2755584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE644946-8807-4FDF-A17C-1BABE2755584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE644946-8807-4FDF-A17C-1BABE2755584}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D00FDD66-5F25-4C0F-A944-B703234E8034}
+	EndGlobalSection
+EndGlobal

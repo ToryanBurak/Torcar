@@ -1,0 +1,28 @@
+﻿@model IEnumerable<UserDto>
+@{
+    ViewData["Title"] = "Admin Panel";
+
+}
+@foreach (var item in Model)
+{
+
+    <div class="card" style="width: 18rem;">
+        <form method="post">
+            <img class="card-img-top" src="@item.ImageUrl" alt="Profile Image">
+            <div class="card-body">
+                <h5 class="card-title">@item.PersonName @item.PersonSurname</h5>
+                <p class="card-text">Id:@item.Id</p>
+                <button type="submit" asp-action="UpdateMember" name="Id" value="@item.Id" class="btn btn-primary">Profile Git</button>
+                @if (item.rentrequestwarrant == true)
+                {
+                    <button type="submit" asp-action="ToWorker" name="Id" value="@item.Id" class="btn btn-primary">Çalışan Yap</button>
+                }
+                @if (item.rentrequestwarrant == false)
+                {
+                    <p class="text-danger">Aktif Müşteriler Çalışan Yapılamaz</p>
+                }
+
+            </div>
+        </form>
+    </div>
+}

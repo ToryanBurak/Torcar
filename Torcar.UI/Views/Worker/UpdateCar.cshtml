@@ -1,0 +1,124 @@
+﻿@model CarDto
+@{
+    ViewData["Title"] = "Araba Düzenleme";
+}
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8 offset-2">
+
+        <form method="post" asp-action="CarMarkUpdate">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+            <label class="form-label text-center">Marka</label>
+            <div class="input-group mb-3">
+                <input asp-for="CarSerial.CarModel.CarMark.Name" name="Mark" type="text" class="form-control" placeholder="@Model.CarSerial.CarModel.CarMark.Name" aria-describedby="button-addon1" />
+                <button class="btn btn-outline-warning" type="submit" id="button-addon1">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarModelUpdate">
+            <label class="form-label text-center">Model</label>
+            <div class="input-group mb-3">
+                <input asp-for="CarSerial.CarModel.Name" name="Model" type="text" class="form-control" placeholder="@Model.CarSerial.CarModel.Name" aria-describedby="button-addon2">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon2">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarSerialUpdate">
+            <label class="form-label text-center">Seri</label>
+            <div class="input-group mb-3">
+                <input asp-for="CarSerial.Name" type="text" name="Serial" class="form-control" placeholder="@Model.CarSerial.Name" aria-describedby="button-addon4">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon4">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarDescUpdate">
+            <label class="form-label text-center">Açıklama</label>
+            <div class="input-group mb-3">
+                <input asp-for="Description" name="Description" type="text" class="form-control" placeholder="@Model.Description" aria-describedby="button-addon5">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon5">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarYearUpdate" asp-controller="User">
+            <label class="form-label text-center">Adres</label>
+            <div class="input-group mb-3">
+                <input asp-for="Year" type="text" pattern="[2]{1}[0]{1}[0-2]{1}[0-9]{1}" name="Year" class="form-control" placeholder="@Model.Year" aria-describedby="button-addon7">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon7">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarFuelUpdate">
+            <label class="form-label text-center">Yakıt</label>
+            <div class="input-group mb-3">
+                <select asp-for="Fuel" name="CarFuel" asp-items="Html.GetEnumSelectList<Torcar.CORE.Enums.Fuel>()" class="form-control"></select>
+                <button class="btn btn-outline-warning" type="submit" id="button-addon6">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarGearUpdate">
+            <label class="form-label text-center">Vites</label>
+            <div class="input-group mb-3">
+                <select asp-for="Fuel" name="CarGear" asp-items="Html.GetEnumSelectList<Torcar.CORE.Enums.Gear>()" class="form-control"></select>
+                <button class="btn btn-outline-warning" type="submit" id="button-addon6">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarKmUpdate">
+            <label class="form-label text-center">Kilometre</label>
+            <div class="input-group mb-3">
+                <input asp-for="KM" name="KM" type="text" class="form-control" placeholder="@Model.KM" aria-describedby="button-addon5">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon5">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarCaseUpdate">
+            <label class="form-label text-center">Kasa Tipi</label>
+            <div class="input-group mb-3">
+                <select asp-for="Case" name="CarCase" asp-items="Html.GetEnumSelectList<Torcar.CORE.Enums.CaseType>()" class="form-control"></select>
+                <button class="btn btn-outline-warning" type="submit" id="button-addon6">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarHpUpdate">
+            <label class="form-label text-center">Motor Gücü</label>
+            <div class="input-group mb-3">
+                <input asp-for="HP" name="HP" type="number" max="1000" min="50" class="form-control" placeholder="@Model.HP" aria-describedby="button-addon5">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon5">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarCcUpdate">
+            <label class="form-label text-center">Motor Hacmi</label>
+            <div class="input-group mb-3">
+                <input asp-for="CC" name="CC" type="number" max="1000" min="50" class="form-control" placeholder="@Model.CC" aria-describedby="button-addon5">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon5">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarColorUpdate">
+            <label class="form-label text-center">Araba Rengi</label>
+            <div class="input-group mb-3">
+                <select asp-for="Color" name="Color" asp-items="Html.GetEnumSelectList<Torcar.CORE.Enums.Color>()" class="form-control"></select>
+                <button class="btn btn-outline-warning" type="submit" id="button-addon6">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="CarImageUpdate" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+            <label class="form-label text-center">Resim</label>
+            <div class="row">
+                <div class=" text-center mb-3">
+                    <img src="@Model.ImageUrl" class="img-fluid" alt="Alternate Text" />
+                </div>
+                <input type="file" accept=".jpeg,.jpg,.png" class="form-control" name="ImageFile" asp-for="Image" />
+                <button class="btn btn-outline-warning" type="submit" id="button-addon8">Düzenle</button>
+                <div class="text-secondary text-center">
+                    <span class="small text-center">
+                        <i class="fa fa-info-circle"></i>Sadece Resim Dosyaları
+                    </span>
+                    <span asp-validation-for="Image" class="text-danger small"></span>
+
+                </div>
+            </div>
+        </form>
+        <form method="post">
+            <div class="row">
+                <div class="col-6">
+                    <button asp-action="DeleteCar" value="@Model.Id" name="Id" type="submit" class="btn btn-danger mb-2">Aracı Sil</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<AdvertDto>
+@{
+    ViewData["Title"] = "İlanlar";
+
+}
+<div class="row">
+    <div class="col-4">
+        <form action="AddAdvertCheckCar" method="get">
+            <div class="card" style="width: 18rem" ;>
+                <img class="card-img-top" src="~/Images/AdminPanel/Adverts (2).jpg" alt="Advert">
+                <div class="card-body">
+                    <button type="submit" asp-action="AddAdvertCheckCar" class="btn btn-primary">İlan Ekle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-12 border border-1">
+            <h1 class="text-center">Yayında Olanlar</h1>
+            @foreach (var item in Model)
+            {
+
+                @if (item.ActiveState == Torcar.CORE.Enums.ActivityState.Active && item.Car.RentState!=Torcar.CORE.Enums.RentState.Rented)
+                {
+                    <div class="card col-4 d-inline-block mx-1" style="width: 18rem;">
+                        <form method="post">
+                            <img class="card-img-top" src="@item.Car.ImageUrl">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Car.CarSerial.CarModel.CarMark.Name @item.Car.CarSerial.CarModel.Name</h5>
+                                <p class="card-text">@item.Car.Description</p>
+                                <p class="card-text">Günlük Fiyat: @item.PriceOfDay</p>
+                                <div class="row">
+                                    <button type="submit" name="Id" value="@item.Id" asp-action="InactiveAdvert" class="btn btn-primary">İlandan Kaldır</button>
+
+                                </div>
+                            </div>
+                        </form>
+                        <form method="get">
+                            <button type="submit" name="Id" value="@item.Id" asp-action="UpdateAdvert" class="btn btn-outline-warning col-4 m-1">İlanı Düzenle</button>
+                        </form>
+                    </div>
+                }
+
+            }
+        </div>
+        <div class="col-12 border border-1">
+            <h1 class="text-center">Yayında Olmayanlar</h1>
+            @foreach (var item in Model)
+            {
+                @if (item.ActiveState== Torcar.CORE.Enums.ActivityState.Inactive && item.Car.RentState!=Torcar.CORE.Enums.RentState.Rented)
+                {
+                    <div class="card col-4 d-inline-block mx-1" style="width: 18rem;">
+                        <form method="post">
+                            <img class="card-img-top" src="@item.Car.ImageUrl">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Car.CarSerial.CarModel.CarMark.Name @item.Car.CarSerial.CarModel.Name</h5>
+                                <p class="card-text">@item.Car.Description</p>
+                                <p class="card-text">Günlük Fiyat: @item.PriceOfDay</p>
+                                <div class="row">
+                                    <button type="submit" name="Id" value="@item.Id" asp-action="ActiveAdvert" class="btn btn-primary">İlanı Paylaş</button>
+
+                                </div>
+                            </div>
+                        </form>
+                        <form method="get">
+                            <button type="submit" name="Id" value="@item.Id" asp-action="UpdateAdvert" class="btn btn-outline-warning col-4 m-1">İlanı Düzenle</button>
+                        </form>
+                    </div>
+                }
+            }
+        </div>
+        <div class="col-12 border border-1">
+            <h1 class="text-center">Kirada Olanlar</h1>
+            @foreach (var item in Model)
+            {
+                @if (item.Car.RentState == Torcar.CORE.Enums.RentState.Rented)
+                {
+                    <div class="card col-4 d-inline-block mx-1" style="width: 18rem;">
+                        <form method="post">
+                            <img class="card-img-top" src="@item.Car.ImageUrl">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Car.CarSerial.CarModel.CarMark.Name @item.Car.CarSerial.CarModel.Name</h5>
+                                <p class="card-text">Günlük Fiyat: @item.PriceOfDay</p>
+                            </div>
+                        </form>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+</div>

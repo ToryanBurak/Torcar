@@ -1,0 +1,19 @@
+﻿@model UpdateWithMailDto
+@{
+
+    ViewData["Title"] = "Şifre Silme";
+}
+<div class="row">
+    <div class="col-4 offset-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+        <form method="post" asp-action="DeleteUserConfirmWithMail" asp-controller="User">
+            <div class="form-group mb-3">
+                <label asp-for="CodeFromUser" class="form-label">Doğrulama Kodu</label>
+                <input asp-for="CodeFromUser" maxlength="100000" min="10000" value="" type="text" class="form-control" placeholder="Doğrulama Kodu" />
+            </div>
+            <div class="form-group d-grid mb-3 ">
+                <button asp-action="DeleteUserConfirmWithMail" class="btn btn-primary" type="submit">Doğrula</button>
+            </div>
+        </form>
+    </div>
+</div>

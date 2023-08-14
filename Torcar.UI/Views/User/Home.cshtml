@@ -1,0 +1,93 @@
+﻿@model UserDto
+@{
+    ViewData["Title"] = "Profil";
+}
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8 offset-2">
+        
+        <form method="post" asp-action="UpdateName"
+              >
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+            <label class="form-label text-center">İsim</label>
+            <div class="input-group mb-3">
+                <input asp-for="PersonName" name="PersonName" type="text" class="form-control" placeholder="@Model.PersonName" aria-describedby="button-addon1" />
+                <button class="btn btn-outline-warning" type="submit" id="button-addon1">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="UpdateSurname">
+            <label class="form-label text-center">Soyisim</label>
+            <div class="input-group mb-3">
+                <input asp-for="PersonSurname" name="PersonSurName" type="text" class="form-control" placeholder="@Model.PersonSurname" aria-describedby="button-addon2">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon2">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="UpdateEmail">
+            <label class="form-label text-center">Email</label>
+            <div class="input-group mb-3">
+                <input asp-for="Email" type="text" name="Email" class="form-control" placeholder="@Model.Email" aria-describedby="button-addon3">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon3">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="UpdateAge">
+            <label class="form-label text-center">Yaş</label>
+            <div class="input-group mb-3">
+                <input asp-for="Age" min="18" max="90" type="number" name="Age" class="form-control" placeholder="@Model.Age" aria-describedby="button-addon4">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon4">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="UpdatePhone">
+            <label class="form-label text-center">Telefon</label>
+            <div class="input-group mb-3">
+                <input asp-for="Phone" pattern="[0]{1}[0-9]{10}" name="Phone" type="text" class="form-control" placeholder="@Model.Phone" aria-describedby="button-addon5">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon5">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="UpdateTC">
+            <label class="form-label text-center">TC Kimlik</label>
+            <div class="input-group mb-3">
+                <input asp-for="TC" type="text" name="TC" pattern="[0-9]{11}" class="form-control" placeholder="@Model.TC" aria-describedby="button-addon6">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon6">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="UpdateAddress">
+            <label class="form-label text-center">Adres</label>
+            <div class="input-group mb-3">
+                <input asp-for="Adress" type="text" name="Address" class="form-control" placeholder="@Model.Adress" aria-describedby="button-addon7">
+                <button class="btn btn-outline-warning" type="submit" id="button-addon7">Düzenle</button>
+            </div>
+        </form>
+        <form method="post" asp-action="UpdateImage" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+            <label class="form-label text-center">Resim</label>
+            <div class="row">
+                <div class=" text-center mb-3">
+                    <img src="@Model.ImageUrl" class="img-fluid" alt="Alternate Text" />
+                </div>
+                <input type="file" accept=".jpeg,.jpg,.png" class="form-control" name="ImageFile" asp-for="Image" />
+                <button class="btn btn-outline-warning" type="submit" id="button-addon8">Düzenle</button>
+                <div class="text-secondary text-center">
+                    <span class="small text-center">
+                        <i class="fa fa-info-circle"></i>Sadece Resim Dosyaları
+                    </span>
+                    <span asp-validation-for="Image" class="text-danger small"></span>
+
+                </div>
+            </div>
+        </form>
+        <form method="get">
+            <div class="row">
+                <div class="col-6">
+                     <button asp-action="DeleteUserConfirmWithMail" value="@Model.Id" name="Id" type="submit" class="btn btn-danger mb-2">Hesabı Sil</button>
+                </div>
+                <div class="col-6">
+                    <button asp-action="UpdatePasswordConfirmWithEmail" value="@Model.Id" type="submit" name="Id" class="btn btn-warning mb-2">Şifreyi Değiştir</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

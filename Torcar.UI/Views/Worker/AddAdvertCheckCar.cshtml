@@ -1,0 +1,18 @@
+﻿@model IEnumerable<CarDto>
+@{
+    ViewData["Title"] = "İlan Ekle";
+
+}
+@foreach (var item in Model)
+{
+    <div class="card col-4 d-inline-block mx-1" style="width: 18rem;">
+        <form method="get">
+            <img class="card-img-top" src="@item.ImageUrl" alt="Profile Image">
+            <div class="card-body">
+                <h5 class="card-title">@item.CarSerial.CarModel.CarMark.Name @item.CarSerial.CarModel.Name</h5>
+                <p class="card-text">@item.Description</p>
+                <button type="submit" name="Id" value="@item.Id" asp-action="AddAdvert" class="btn btn-primary">İlana Koy</button>
+            </div>
+        </form>
+    </div>
+}

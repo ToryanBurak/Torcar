@@ -1,0 +1,20 @@
+﻿@model IEnumerable<UserDto>
+@{
+    ViewData["Title"] = "Admin Panel";
+
+}
+@foreach (var item in Model)
+{
+
+    <div class="card" style="width: 18rem;">
+        <form method="post">
+            <img class="card-img-top" src="@item.ImageUrl" alt="Profile Image">
+            <div class="card-body">
+                <h5 class="card-title">@item.PersonName @item.PersonSurname</h5>
+                <p class="card-text">Id:@item.Id</p>
+                <button type="submit" asp-action="UpdateMember" name="Id" value="@item.Id" class="btn btn-primary">Profile Git</button>
+                <button type="submit" asp-action="ToMember" name="Id" value="@item.Id" class="btn btn-primary">Kullanıcı Yap</button>
+            </div>
+        </form>
+    </div>
+}

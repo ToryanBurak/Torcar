@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AdvertDto>
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+<link href="../wwwroot/css/Adverts.css" rel="stylesheet" media="all" />
+@foreach (var item in Model)
+{
+    if (item.Car.RentState == Torcar.CORE.Enums.RentState.Not_Rented)
+    {
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="@item.Car.ImageUrl" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Car.CarSerial.CarModel.CarMark.Name @item.Car.CarSerial.CarModel.Name @item.Car.CarSerial.Name</h5>
+                    <p class="card-text">@item.Car.Description</p>
+                    <p class="card-text">Günlük Fiyat: @item.PriceOfDay</p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <form asp-action="UpdateAdvert" asp-controller="Admin" method="get">
+                            <button asp-action="UpdateAdvert" asp-controller="Admin" name="Id" type="submit" value="@item.Id" class="btn btn-primary">İlanı Düzenle</button>
+                        </form>
+                    }
+                    @if (User.IsInRole("User"))
+                    {
+                        <form asp-action="AddRequestForDay" asp-controller="User" method="get">
+                            <button asp-action="AddRequestForDay" asp-controller="User" name="Id" type="submit" value="@item.Id" class="btn btn-primary">Hemen Günlük Kirala</button>
+                        </form>
+                        <form asp-action="AddRequestForMonth" asp-controller="User" method="get">
+                            <button asp-action="AddRequestForMonth" asp-controller="User" name="Id" type="submit" value="@item.Id" class="btn btn-primary">Hemen Aylık Kirala</button>
+                        </form>
+
+                    }
+                    @if (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier) == null)
+                    {
+                        <form asp-action="Login" asp-controller="Identity" method="get">
+                            <button asp-action="Login" asp-controller="Identity" type="submit" class="btn btn-primary">Kiralamak İçin Giriş Yap</button>
+                        </form>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    }
+
+
+}

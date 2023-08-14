@@ -1,0 +1,34 @@
+﻿@model UserLoginDto
+@{
+    ViewData["Title"] = "Giriş Yap";
+}
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+        <form method="post" asp-action="Login" asp-controller="Identity">
+            <div class="form-group mb-3">
+                <label asp-for="UserName" class="form-label">Kullanıcı Adı</label>
+                <input asp-for="UserName" type="text" class="form-control" placeholder="Kullanıcı Adı" />
+                <span asp-validation-for="UserName" class="text-danger small"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label">Şifre</label>
+                <input asp-for="Password" class="form-control" placeholder="Şifre" type="password" />
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+            <div class="form-group d-grid mb-3 ">
+                <button class="btn btn-primary" type="submit">Giriş</button>
+            </div>
+            
+        </form>
+        <form asp-action="ForgetPasswordForMail" method="get">
+            <button asp-action="ForgetPasswordForMail" type="submit" class="small btn btn-outline-warning">Şifrenizi mi Unuttunuz?</button>
+        </form>
+    </div>
+</div>

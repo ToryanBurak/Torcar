@@ -1,0 +1,45 @@
+﻿@model RequestDto
+@{
+    ViewData["Title"] = "Admin Panel";
+
+}
+<div class="row">
+    <div class="border border-1">
+        <div class="card col-6 d-inline-block m-5" style="width: 18rem;">
+            <form method="Get">
+                <img class="card-img-top" src="@Model.Advert.Car.ImageUrl" alt="Profile Image">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Advert.Car.CarSerial.CarModel.CarMark.Name @Model.Advert.Car.CarSerial.CarModel.Name</h5>
+                    <p class="card-text">@Model.Advert.Car.Description</p>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="col-6 d-inline-block">
+            <form method="post" asp-action="AddRequestForDay">
+                <div class="form-group mx-1">
+                    <label class="form-label text-center" type="date">Kiralama Ay Sayısı</label>
+                    <input type="number" max="12" min="1" value="1" name="RentMonth" asp-for="RentMonth" class="form-control" placeholder="1" />
+                </div>
+                <div class="form-group mx-1">
+                    <label asp-for="RentStart" class="form-label text-center" type="date">Kira Başlangıç Zamanı</label>
+                    <input type="date" min="@DateTime.Now.AddDays(1)" max="@DateTime.Now.AddMonths(12)" value="@DateTime.Now.AddDays(1)" name="RentStart" asp-for="RentStart" class="form-control" placeholder="1" />
+                </div>
+                @if (Model.User.rentrequestwarrant == true)
+                {
+                    <div class="form-group">
+                        <button class="btn btn-outline-warning" value="@Model" name="Request" type="submit">Kirala</button>
+                    </div>
+                }
+                @if (Model.User.rentrequestwarrant == false)
+                {
+                    <div class="form-group">
+                        <p class="text-danger">!Müşterilerimiz aynı anda birden fazla aracı kiralayamamaktadır.</p>
+                    </div>
+                }
+
+            </form>
+        </div>
+    </div>
+</div>

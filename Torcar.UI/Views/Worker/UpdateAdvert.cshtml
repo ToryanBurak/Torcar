@@ -1,0 +1,31 @@
+﻿@model AdvertDto
+
+@{
+    ViewData["Title"] = "Admin Panel";
+
+}
+<div class="row">
+    <div class="border border-1">
+        <div class="card col-6 d-inline-block m-5" style="width: 18rem;">
+                <img class="card-img-top" src="@Model.Car.ImageUrl" alt="Profile Image">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Car.CarSerial.CarModel.CarMark.Name @Model.Car.CarSerial.CarModel.Name</h5>
+                    <p class="card-text">@Model.Car.Description</p>
+                </div>
+        </div>
+
+        <div class="col-6 d-inline-block">
+            <form method="post" asp-action="UpdateAdvert">
+                <div class="form-group mx-1">
+                    <label asp-for="PriceOfDay" class="form-label text-center">Günlük Fiyat Belirle</label>
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="number" name="Price" asp-for="PriceOfDay" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button name="Advert" value="@Model" asp-action="UpdateAdvert" class="btn btn-outline-warning" type="submit">Düzenle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

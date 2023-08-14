@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Emin Misiniz?";
+}
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <h1 class="text-danger text-center"><i class="fa-solid fa-circle-minus fa-3x" style="color: #ff0000;"></i></h1>
+        <p class="text-center">Hesabınızı Dondurmak Üzeresiniz.</p>
+        <p class="text-center">Bu işlemi yaptığınıza emin misiniz?</p>
+        <form asp-action="DeleteUser" method="post">
+            <button asp-action="DeleteUser" class="text-center btn btn-outline-danger">EMİNİM!!!</button>
+        </form>
+    </div>
+</div>
