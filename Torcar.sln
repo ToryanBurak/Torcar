@@ -11,13 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torcar.REPOSITORY", "Torcar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torcar.SERVICE", "Torcar.SERVICE\Torcar.SERVICE.csproj", "{73AB1679-5793-4065-AF03-22F4E254EDE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torcar.CACHE", "Torcar.CACHE\Torcar.CACHE.csproj", "{5E803508-C3AA-4816-83C8-D4431454511F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorCar.Test", "TorCar.Test\TorCar.Test.csproj", "{DE644946-8807-4FDF-A17C-1BABE2755584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TorCar.Test", "TorCar.Test\TorCar.Test.csproj", "{DE644946-8807-4FDF-A17C-1BABE2755584}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4718F26-F548-44F6-9A53-46D0D5D7C0BF}"
 	ProjectSection(SolutionItems) = preProject
 		Note.txt = Note.txt
+		RabbitMQ.txt = RabbitMQ.txt
 	EndProjectSection
 EndProject
 Global
@@ -42,10 +41,6 @@ Global
 		{73AB1679-5793-4065-AF03-22F4E254EDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73AB1679-5793-4065-AF03-22F4E254EDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73AB1679-5793-4065-AF03-22F4E254EDE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E803508-C3AA-4816-83C8-D4431454511F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E803508-C3AA-4816-83C8-D4431454511F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E803508-C3AA-4816-83C8-D4431454511F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E803508-C3AA-4816-83C8-D4431454511F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE644946-8807-4FDF-A17C-1BABE2755584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DE644946-8807-4FDF-A17C-1BABE2755584}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE644946-8807-4FDF-A17C-1BABE2755584}.Release|Any CPU.ActiveCfg = Release|Any CPU

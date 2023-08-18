@@ -12,14 +12,14 @@ namespace Torcar.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        
         private readonly IUserService _userservice;
         private readonly IAdvertService _advertService;
         private readonly IMapper _mapper;
 
-        public HomeController(ILogger<HomeController> logger, IUserService userservice, IAdvertService advertService, IMapper mapper)
+
+        public HomeController( IUserService userservice, IAdvertService advertService, IMapper mapper)
         {
-            _logger = logger;
             _userservice = userservice;
             _advertService = advertService;
             _mapper = mapper;
@@ -39,17 +39,18 @@ namespace Torcar.UI.Controllers
             IEnumerable<AdvertDto> _adverts=_mapper.Map<IEnumerable<AdvertDto>>(adverts);
             return View(_adverts);
         }
-        public IActionResult Email()
-        {
-            string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            User u = _userservice.FirstOrDefault(x => x.Id == Convert.ToInt32(id));
-            int confirmcode = u.ConfirmCode;
-            return View(confirmcode);
-        }
+        //public IActionResult Email()
+        //{
+        //    string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    User u = _userservice.FirstOrDefault(x => x.Id == Convert.ToInt32(id));
+        //    int confirmcode = u.ConfirmCode;
+        //    return View(confirmcode);
+        //}
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult CustomError()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+        
     }
 }

@@ -10,6 +10,7 @@ namespace Torcar.CORE.DTOs
 {
     public class RentDto
     {
+        public int Id { get; set; }
         public int RentRequestId { get; set; }
         public RentDateState RentDateState { get; set; }
         public virtual RequestDto RentRequest { get; set; }

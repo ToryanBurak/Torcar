@@ -1,0 +1,7 @@
+RabbitMQ asenkron olarak çalýþan mesaj kuyruk sistemleridir.
+RabbitMQ içerisinde exchange ve queue ler vardýr.
+Publisher isterse rabbit mqya direk kuyruk tarafýna da mesaj iletebilir,isterse exchange tarafýna mesajý iletip exchange ilgili mesajý atmadan önce iþlem yapýp o iþlemi yaptýktan sonra kuyruða iletir.
+RabbitMQ neden kullanmalýyýz?
+Request-response süresini azaltmak.yapýlan yoðun iþlemlerde rabbit mq kullanýp daha hýzlý iþlem yapmak.
+Uzun süren iþlemleri rabbitmq sayesinde ayrý bir process'de gerçekleþtirebilmek.
+Microservice mimarilerde asenkron iletiþim saðlamak.
