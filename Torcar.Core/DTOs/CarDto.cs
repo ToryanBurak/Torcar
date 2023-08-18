@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Torcar.CORE.DTOs
 {
     public class CarDto
     {
+        
         public int? Id { get; set; }
         public string Description { get; set; }
         public int? CarSerialId { get; set; }
@@ -23,11 +25,11 @@ namespace Torcar.CORE.DTOs
         public int HP { get; set; }
         public double CC { get; set; }
         public Color Color { get; set; }
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
         public string? ImageUrl { get; set; }
-        public CarSerialDto CarSerial { get; set; }
-        public AdvertDto Advert { get; set; }
-        public ActivityState ActiveState { get; set; }
+        public CarSerialDto? CarSerial { get; set; }
+        public AdvertDto? Advert { get; set; }
+        public ActivityState? ActiveState { get; set; } 
         public RentState RentState { get; set; } = RentState.Not_Rented;
     }
 }

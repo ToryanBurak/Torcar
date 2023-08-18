@@ -29,5 +29,6 @@ namespace Torcar.CORE.DTOs
         public ObjectState ObjectState { get; set; }
         [Required(ErrorMessage ="Resim Girmediniz!!!")]
         public IFormFile Image { get; set; }
+        public Gender Gender { get; set; }
     }
 }

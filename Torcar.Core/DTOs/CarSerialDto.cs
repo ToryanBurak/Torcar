@@ -8,7 +8,9 @@ namespace Torcar.CORE.DTOs
 {
     public class CarSerialDto
     {
+        public int? Id { get; set; }
         public string Name { get; set; }
         public CarModelDto CarModel { get; set; }
+        public int CarModelId { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Torcar.CORE.Service
         Task<T> GetByIdAsync(int id);
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
         Task<IEnumerable<T>> GetAllAsync();
-        IQueryable<T> GetAll();
+        List<T> GetAll();
         Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> expression);
         T SingleOrDefault(Expression<Func<T, bool>> expression);
         Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> expression);

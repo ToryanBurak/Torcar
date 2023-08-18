@@ -54,9 +54,9 @@ namespace Torcar.SERVICE.Service
             return await _repository.FirstOrDefaultAsync(expression);
         }
 
-        public IQueryable<T> GetAll()
+        public List<T> GetAll()
         {
-            return _repository.GetAll().AsQueryable();
+            return _repository.GetAll().AsQueryable().ToList();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()

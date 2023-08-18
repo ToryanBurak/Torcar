@@ -27,18 +27,37 @@ Gelen deðerin belli bir aralýkta olup olmadýðýný kontrol eder.
 belirtilen dizinin içeriðinin tek olup olmadýðýný kontrol eder.
 
 *IsType<> ve IsNotType<>:
-belirtilen objenin tipini kontrol eder.
+ belirtilen objenin tipini kontrol eder.
 
 *IsAssignableForm:
-Bir tipin diðer tipe referans verip veremeyeceðini kontrol eder.
+ Bir tipin diðer tipe referans verip veremeyeceðini kontrol eder.
 
 *Null ve NotNull:
-verilen deðerin nullable kontrolünü saðlar.
+ verilen deðerin nullable kontrolünü saðlar.
 ---------------
-Test Metodlarýnýn Parametre alma durumu:
-Normalde Parametre almayan test metodlarý için [Fact] attributelarý kullanýlýr.
-Eðer test metodumuz paratmetre alýyorsa [Theory] Attribute'u kullanýlmaýlýr.
-[Theory] attribute'undan sonra ise [InlineData(parametreler için verdiðimiz deðerler)] kullanýlmalýdýr.
-[InlineData] Birden fazla kullanýlabilir.Her attribute için bir test oluþturulur.
+ Test Metodlarýnýn Parametre alma durumu:
+ Normalde Parametre almayan test metodlarý için [Fact] attributelarý kullanýlýr.
+ Eðer test metodumuz paratmetre alýyorsa [Theory] Attribute'u kullanýlmaýlýr.
+ [Theory] attribute'undan sonra ise [InlineData(parametreler için verdiðimiz deðerler)] kullanýlmalýdýr.
+ [InlineData] Birden fazla kullanýlabilir.Her attribute için bir test oluþturulur.
+------
+Mock Yapýsý:
+ Uygulamamýz içerisindeki class ve interfaceleri taklit etmemizi saðlayan yapýlardýr.
+ Bir projede mock kullanmak istiyorsak test edeceðimiz projenin bazý patternlere uymasý lazýmdýr.
+ Bir projede mock yapýsý kullanmak istiyorsak dependency Injection uygulamamýz gerekir.Class Baðýmlýlýklarý mümkün olduðunca az olmalýdýr.
+
+Verify():
+ Bir metodun çalýþýp çalýþmadýðýný kontrol eder.
+ Times nesnesi üzerinden kaç kere çalýþtýðýný veya hiç çalýþmadýðýný test edebiliriz.
+
+Throws():
+ Bir metod üzerinden hata fýrlatmak.
+
+Callback():
+ Bir metodun üzerinde callback() yani ikinci metod çalýþtýrma iþlemi yapar.
+
+It.IsAny<T>():
+ Metodun aldýðý generic tipin kontrolünü saðlar.
+
 
 
